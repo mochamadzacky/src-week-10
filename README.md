@@ -46,3 +46,11 @@ Terakhir, tambahkan method dispose() berguna ketika widget sudah tidak digunakan
 
 Berikut hasil setelah dijalankan 
 ![alt text](image-14.png)
+
+# Tugas Praktikum 1
+Selesaikan langkah-langkah praktikum tersebut, lalu dokumentasikan berupa GIF hasil akhir praktikum beserta penjelasannya di file README.md! Jika Anda menemukan ada yang error atau tidak berjalan dengan baik, silakan diperbaiki.
+1. Jelaskan maksud dari langkah 4 pada praktikum tersebut! Mengapa dilakukan demikian? Langkah ini dilakukan agar layar bisa merespons perubahan data secara real-time melalui mekanisme state management Flutter.
+2. Mengapa perlu variabel plan di langkah 6 pada praktikum tersebut? Mengapa dibuat konstanta ? Variabel plan dibuat agar dapat menyimpan daftar tugas dalam satu rencana tertentu, dan menggunakan final menjaga agar objeknya konsisten selama aplikasi berjalan.
+3. Lakukan capture hasil dari Langkah 9 berupa GIF, kemudian jelaskan apa yang telah Anda buat! Pada langkah ini, aplikasi menampilkan daftar plan yang bisa ditambahkan oleh pengguna.
+Setiap plan dapat diberi tanda centang untuk menandakan bahwa tugas tersebut sudah selesai.
+4. Apa kegunaan method pada Langkah 11 dan 13 dalam lifecyle state ? Method ini digunakan untuk menyiapkan data atau controller sebelum widget ditampilkan.
