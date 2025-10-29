@@ -94,3 +94,63 @@ Dengan of(context), kita bisa mengakses state yang sama dari widget mana pun yan
 4. Lakukan capture hasil dari Langkah 9 berupa GIF, kemudian jelaskan apa yang telah Anda buat! 
 ![demo](image-23.png)
 5. Kumpulkan laporan praktikum Anda berupa link commit atau repository GitHub ke dosen yang telah disepakati !
+
+# Praktikum 3: Membuat State di Multiple Screens
+
+Mengedit class PlanProvider sehingga dapat menangani List Plan
+![alt text](image-24.png)
+
+Langkah sebelummnya menyebabkan main.dart terjadi error jadi kita ubah kode di main.dart seperti berikut 
+![alt text](image-25.png)
+
+Mengedit plan_screen.dart, menambahkan variabel plan dan atribut pada constructor-nya 
+![alt text](image-26.png)
+
+Menambahkan getter pada _PlanScreenState
+![alt text](image-27.png)
+
+Merubah ke List dan mengubah nilai pada currentPlan 
+![alt text](image-28.png)
+
+Pastikan ubah ke List dan variabel planNotifier
+![ jhdsh](image-29.png)
+
+Pada folder view membuat file plan_creator_screen.dart, dan deklarasikan dengan StatefulWidget bernama PlanCreatorScreen
+![alt text](image-30.png)
+
+variabel TextEditingController sehingga bisa membuat TextField sederhana untuk menambah Plan baru. 
+![alt text](image-31.png)
+
+Meletakkan method Widget build berikut di atas void dispose
+![alt text](image-32.png)
+
+Membuat widget _buildListCreator
+![alt text](image-33.png)
+
+Membuat void addPlan()
+![alt text](image-34.png)
+
+buat widget _buildMasterPlans() yang menampilkan daftar plan dari PlanProvider. Jika list plan kosong, ditampilkan icon dan teks pemberitahuan, kalau ada plan ditampilkan dengan ListView.builder.
+![alt text](image-35.png)
+
+# Tugas Praktikum 3 
+
+1. Selesaikan langkah-langkah praktikum tersebut, lalu dokumentasikan berupa GIF hasil akhir praktikum beserta penjelasannya di file README.md! Jika Anda menemukan ada yang error atau tidak berjalan dengan baik, silakan diperbaiki sesuai dengan tujuan aplikasi tersebut dibuat.
+2. Berdasarkan Praktikum 3 yang telah Anda lakukan, jelaskan maksud dari gambar diagram berikut ini! diagram menjelaskan aliran state management 
+PlanProvider menyimpan state plan.
+
+PlanCreatorScreen bisa membaca/mengubah state.
+
+Saat user klik plan, navigasi ke PlanScreen tetap bisa mengakses state yang sama melalui PlanProvider.
+
+
+3. Lakukan capture hasil dari Langkah 14 berupa GIF, kemudian jelaskan apa yang telah Anda buat! 
+![demo](image-36.png)
+User bisa menambahkan plan melalui TextField di PlanCreatorScreen.
+
+Plan yang ditambahkan langsung muncul di ListView.
+
+Saat user klik salah satu plan, navigasi ke PlanScreen tetap menampilkan data yang sama karena state dikelola oleh PlanProvider.
+4. Kumpulkan laporan praktikum Anda berupa link commit atau repository GitHub ke dosen yang telah disepakati !
+
+

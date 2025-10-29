@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:src_week10/models/plan.dart';
 import 'package:src_week10/provider/plan_provider.dart';
-import 'package:src_week10/views/plan_screen.dart';
+import 'package:src_week10/views/plan_creator_screen.dart'; // import screen baru
 
 void main() => runApp(const MasterPlanApp());
 
@@ -10,14 +10,14 @@ class MasterPlanApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false, 
-      theme: ThemeData(primarySwatch: Colors.purple),
-      home: PlanProvider(
-        notifier: ValueNotifier<Plan>(
-          const Plan(name: 'Master Plan Zaky'),
+    return PlanProvider(
+      notifier: ValueNotifier<List<Plan>>(const []),
+      child: MaterialApp(
+        title: 'State management app',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
         ),
-        child: const PlanScreen(),
+        home: const PlanCreatorScreen(), 
       ),
     );
   }
