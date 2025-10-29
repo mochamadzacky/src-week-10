@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:src_week10/models/plan.dart';
-import './views/plan_screen.dart';
+import 'package:src_week10/provider/plan_provider.dart';
+import 'package:src_week10/views/plan_screen.dart';
 
-void main() => runApp(MasterPlanApp());
+void main() => runApp(const MasterPlanApp());
 
 class MasterPlanApp extends StatelessWidget {
   const MasterPlanApp({super.key});
@@ -10,9 +11,14 @@ class MasterPlanApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, 
       theme: ThemeData(primarySwatch: Colors.purple),
-      home: PlanScreen(plan: const Plan(name: 'Master Plan Zaky')),
-
+      home: PlanProvider(
+        notifier: ValueNotifier<Plan>(
+          const Plan(name: 'Master Plan Zaky'),
+        ),
+        child: const PlanScreen(),
+      ),
     );
   }
 }

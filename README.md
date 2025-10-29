@@ -54,3 +54,43 @@ Selesaikan langkah-langkah praktikum tersebut, lalu dokumentasikan berupa GIF ha
 3. Lakukan capture hasil dari Langkah 9 berupa GIF, kemudian jelaskan apa yang telah Anda buat! Pada langkah ini, aplikasi menampilkan daftar plan yang bisa ditambahkan oleh pengguna.
 Setiap plan dapat diberi tanda centang untuk menandakan bahwa tugas tersebut sudah selesai.
 4. Apa kegunaan method pada Langkah 11 dan 13 dalam lifecyle state ? Method ini digunakan untuk menyiapkan data atau controller sebelum widget ditampilkan.
+
+
+# Praktikum 2: Mengelola Data Layer dengan InheritedWidget dan InheritedNotifier
+
+Membuat folder baru provider pada folder lib kemudian membuat file di dalam folder tersebut plan_provider.dart
+![plan](image-15.png)
+
+Mengedit main.dart 
+Mengganti pada bagian atribut home dengan PlanProvider seperti berikut. 
+![main](image-16.png)
+
+Menambahkan dua method di dalam model class Plan
+![u](image-17.png)
+
+Edit PlanScreen agar menggunakan data dari PlanProvider. Hapus deklarasi variabel plan (ini akan membuat error). Kita akan perbaiki pada langkah 5 berikut ini. 
+
+Edit method _buildAddTaskButton Tambahkan BuildContext sebagai parameter dan gunakan PlanProvider sebagai sumber datanya
+![5](image-18.png)
+
+Menambahkan parameter BuildContext, gunakan PlanProvider sebagai sumber data. Ganti TextField menjadi TextFormField untuk membuat inisial data provider menjadi lebih mudah
+![provider](image-19.png)
+
+Mengedit build list Sesuaikan parameter pada bagian _buildTaskTile
+![7](image-20.png)
+
+Edit method build sehingga bisa tampil progress pada bagian bawah (footer). Caranya, bungkus (wrap) _buildList dengan widget Expanded dan masukkan ke dalam widget Column 
+![alt text](image-21.png)
+
+Terakhir, menambahkan widget SafeArea dengan berisi completenessMessage pada akhir widget Column.
+![alt text](image-22.png)
+
+# Tugas Praktikum 2 
+
+1. Selesaikan langkah-langkah praktikum tersebut, lalu dokumentasikan berupa GIF hasil akhir praktikum beserta penjelasannya di file README.md! Jika Anda menemukan ada yang error atau tidak berjalan dengan baik, silakan diperbaiki sesuai dengan tujuan aplikasi tersebut dibuat.
+2. Jelaskan mana yang dimaksud InheritedWidget pada langkah 1 tersebut! Mengapa yang digunakan InheritedNotifier? InheritedWidget adalah kelas dasar di Flutter yang digunakan untuk mewariskan data atau state ke seluruh widget turunannya tanpa perlu mengoper parameter secara manual, InheritedNotifier adalah turunan dari InheritedWidget yang lebih efisien, karena ia secara otomatis memberi tahu (notify) widget turunan hanya ketika data (notifier) berubah.
+3. Jelaskan maksud dari method di langkah 3 pada praktikum tersebut! Mengapa dilakukan demikian? Method of(context) digunakan agar widget lain bisa mengakses data Plan yang diwariskan oleh PlanProvider di atasnya, Flutter tidak punya "global state" default.
+Dengan of(context), kita bisa mengakses state yang sama dari widget mana pun yang menjadi turunan PlanProvider.
+4. Lakukan capture hasil dari Langkah 9 berupa GIF, kemudian jelaskan apa yang telah Anda buat! 
+![demo](image-23.png)
+5. Kumpulkan laporan praktikum Anda berupa link commit atau repository GitHub ke dosen yang telah disepakati !
